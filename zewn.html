@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marriage Details</title>
+    <style>
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            background-color: #ffc0cb;
+            color: #800080;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            flex-direction: column;
+            text-align: center;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 50%;
+        }
+        h1, p {
+            margin: 0;
+            padding: 10px;
+        }
+        .daisies {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .daisies img {
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="daisies">
+            <img src="https://example.com/daisy.png" alt="Daisy" width="50" height="50">
+            <img src="https://example.com/daisy.png" alt="Daisy" width="50" height="50">
+            <img src="https://example.com/daisy.png" alt="Daisy" width="50" height="50">
+        </div>
+        <h1>Congratulations, <span id="name"></span>!</h1>
+        <p><strong>Reason:</strong> <span id="description"></span></p>
+        <div class="daisies">
+            <img src="https://example.com/daisy.png" alt="Daisy" width="50" height="50">
+            <img src="https://example.com/daisy.png" alt="Daisy" width="50" height="50">
+            <img src="https://example.com/daisy.png" alt="Daisy" width="50" height="50">
+        </div>
+    </div>
+
+    <audio autoplay loop>
+        <source src="mirrors.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const name = urlParams.get('name');
+        const description = urlParams.get('description');
+        document.getElementById('name').textContent = name;
+        document.getElementById('description').textContent = description;
+    </script>
+</body>
+</html>
